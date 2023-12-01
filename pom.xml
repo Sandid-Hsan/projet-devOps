@@ -61,6 +61,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>zaagapp</finalName>
     </build>
 
 </project>

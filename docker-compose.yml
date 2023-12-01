@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: gte3
+      MONGO_INITDB_ROOT_PASSWORD: gte3
+      MONGO_INITDB_DATABASE: gte3
+    volumes:
+      - ~/db:/data/db
+  app:
+    image: 'springbootapp'
+    build: .
+    ports:
+      - "9090:9090"
+    depends_on:
+      - mongodb
