@@ -16,5 +16,7 @@ services:
     build: .
     ports:
       - "9090:9090"
+    environment:
+      SPRING_DATASOURCE_URL: mongodb://gte3:gte3@mongo-service:27017/gte3?authSource=admin&readPreference=primaryPreferred&directConnection=true
     depends_on:
       - mongodb
