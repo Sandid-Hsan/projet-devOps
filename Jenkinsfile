@@ -1,13 +1,14 @@
 pipeline {
     agent any
-    tools {
-        maven 'maven_3_9_4'
-    }
     stages {
-        stage('Build Maven') {
+        stage('SonarQube analysis') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/aminos98/mongo-demo']])
-                sh 'mvn clean package -DskipTests'
+                script {
+                    withSonarQubeEnv('GTE3-sonar') {
+                        sh 'mvn clean install -DskipTests'
+                        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                    }
+                }
             }
         }
         stage('Build docker image'){
