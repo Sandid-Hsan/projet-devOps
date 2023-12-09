@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: student-configmap
 data: 
-  SPRING_DATASOURCE_URL: mongodb://gte3:gte3@mongo-service:27017/gte3?authSource=admin&readPreference=primaryPreferred&directConnection=true
+  SPRING_DATASOURCE_URL: mongodb://hsan:hsan@mongo-service:27017/hsan?authSource=admin&readPreference=primaryPreferred&directConnection=true

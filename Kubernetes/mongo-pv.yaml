@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /home/amine/db
+    path: /home/hsan/db
 

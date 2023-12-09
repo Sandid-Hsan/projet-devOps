@@ -6,9 +6,9 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: gte3
-      MONGO_INITDB_ROOT_PASSWORD: gte3
-      MONGO_INITDB_DATABASE: gte3
+      MONGO_INITDB_ROOT_USERNAME: hsan
+      MONGO_INITDB_ROOT_PASSWORD: hsan
+      MONGO_INITDB_DATABASE: hsan
     volumes:
       - ~/db:/data/db
   app:
@@ -17,6 +17,6 @@ services:
     ports:
       - "9090:9090"
     environment:
-      SPRING_DATASOURCE_URL: mongodb://gte3:gte3@mongo-service:27017/gte3?authSource=admin&readPreference=primaryPreferred&directConnection=true
+      SPRING_DATASOURCE_URL: mongodb://hsan:hsan@mongodb:27017/gte3?authSource=admin&readPreference=primaryPreferred&directConnection=true
     depends_on:
       - mongodb

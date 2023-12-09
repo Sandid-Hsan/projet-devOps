@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: spring-app
-        image: ahmedamin1998/tp-devops:latest
+        image: hassensandid/spring-app:latest
         env:
         - name: SPRING_DATASOURCE_URL
           valueFrom:

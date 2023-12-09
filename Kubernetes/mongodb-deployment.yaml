@@ -34,7 +34,7 @@ spec:
                 name: mongo-secret
                 key: MONGO_INITDB_ROOT_PASSWORD
           - name: MONGO_INITDB_DATABASE
-            value: "gte3"
+            value: "hsan"
       volumes:  # This is a key part that was missing
         - name: mongo-volume
           persistentVolumeClaim:
